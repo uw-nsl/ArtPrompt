@@ -33,16 +33,16 @@ We provide a demo prompt to show the effectiveness of ArtPrompt in notebook `dem
 
 ### Run with ArtPrompt
 #### Setup Environment
-- Make sure setup your API key in `` or in environment before running experiment.
+- Make sure setup your API key in `utils/model.py` (or in environment) before running experiment.
 
-####
-Run evaluation on `vitc-s` dataset
+#### Running
+Run evaluation on `vitc-s` dataset. More details please refer to `benchmark.py`
 ```python
 # at dir ArtPrompt
 python benchmark.py --model gpt-4-0613 --task s
 ```
 
-Run jailbreak with ArtPrompt
+Run jailbreak with ArtPrompt. More details please refer to `baseline.py`
 ```python
 cd jailbreak
 python baseline.py --model gpt-4-0613 --tmodel gpt-3.5-turbo-0613 
