@@ -1,0 +1,8 @@
+openai
+boto3
+google-generativeai
+tenacity
+tqdm
+datasets
+transformers
+art
