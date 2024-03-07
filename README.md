@@ -29,7 +29,7 @@
 
 ## How to Use ArtPrompt
 ### Quick Start
-We provide a demo prompt to show the effectiveness of ArtPrompt in notebook `demo.ipynb`. This is a successful prompt toward `gpt-4-0613`.
+We provide a demo prompt to show the effectiveness of ArtPrompt in notebook `demo.ipynb` (also at `demo_prompt.txt`). This is a successful prompt toward `gpt-4-0613`.
 
 ### Run with ArtPrompt
 #### Setup Environment
