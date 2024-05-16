@@ -17,6 +17,11 @@
 <em>Warning: This project contains model outputs that may be considered offensive</em> <br>
 </b>
 </p>
+<p align='center' style='color: red;';>
+<b>
+ACL 2024
+</b>
+</p>
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
     <a href="https://arxiv.org/abs/2402.11753" target="_blank" style="text-decoration: none;">[arXiv]</a>
