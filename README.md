@@ -23,8 +23,9 @@ ACL 2024
 </b>
 </p>
 <p align='center' style="text-align:center;font-size:2.5 em;">
+   
 <b>
-    <a href="https://arxiv.org/abs/2402.11753" target="_blank" style="text-decoration: none;">[arXiv]</a>
+    <a href="https://aclanthology.org/2024.acl-long.809/" target="_blank" style="text-decoration: none;">[Paper]</a>
 </b>
 </p>
 
@@ -63,13 +64,27 @@ Our project built upon the work from [python-art](https://github.com/sepandhaghi
 If you find our project useful in your research, please consider citing:
 
 ```
-@misc{jiang2024artprompt,
-      title={ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs}, 
-      author={Fengqing Jiang and Zhangchen Xu and Luyao Niu and Zhen Xiang and Bhaskar Ramasubramanian and Bo Li and Radha Poovendran},
-      year={2024},
-      eprint={2402.11753},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{jiang-etal-2024-artprompt,
+    title = "{A}rt{P}rompt: {ASCII} Art-based Jailbreak Attacks against Aligned {LLM}s",
+    author = "Jiang, Fengqing  and
+      Xu, Zhangchen  and
+      Niu, Luyao  and
+      Xiang, Zhen  and
+      Ramasubramanian, Bhaskar  and
+      Li, Bo  and
+      Poovendran, Radha",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.809",
+    doi = "10.18653/v1/2024.acl-long.809",
+    pages = "15157--15173",
+    abstract = "Safety is critical to the usage of large language models (LLMs). Multiple techniques such as data filtering and supervised fine-tuning have been developed to strengthen LLM safety. However, currently known techniques presume that corpora used for safety alignment of LLMs are solely interpreted by semantics. This assumption, however, does not hold in real-world applications, which leads to severe vulnerabilities in LLMs. For example, users of forums often use ASCII art, a form of text-based art, to convey image information. In this paper, we propose a novel ASCII art-based jailbreak attack and introduce a comprehensive benchmark Vision-in-Text Challenge (ViTC) to evaluate the capabilities of LLMs in recognizing prompts that cannot be solely interpreted by semantics. We show that five SOTA LLMs (GPT-3.5, GPT-4, Gemini, Claude, and Llama2) struggle to recognize prompts provided in the form of ASCII art. Based on this observation, we develop the jailbreak attack ArtPrompt, which leverages the poor performance of LLMs in recognizing ASCII art to bypass safety measures and elicit undesired behaviors from LLMs. ArtPrompt only requires black-box access to the victim LLMs, making it a practical attack. We evaluate ArtPrompt on five SOTA LLMs, and show that ArtPrompt can effectively and efficiently induce undesired behaviors from all five LLMs.",
 }
 ```
 
