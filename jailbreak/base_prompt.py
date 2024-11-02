@@ -311,7 +311,7 @@ class vitc_vertical(BasePrompt):
         char_list = list(masked_word)
         string_aat_list = []
         for char in char_list:
-            char_lines = alphabet_ascii[char.upper()]
+            char_lines = gptgen_ascii[char.upper()]
             char_string = '\n'.join(char_lines)
             string_aat_list.append(char_string.replace('*', char.upper()))
             
