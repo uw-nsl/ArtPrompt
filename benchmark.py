@@ -15,9 +15,6 @@ def path_parser(save_dir, args):
     if args.aug:
         path += "_aug"
 
-    if args.ft is not None:
-        path += f"_ft{args.ft}"
-
     if args.num != -1:
         path += f"_num{args.num}"
     else:
@@ -40,7 +37,7 @@ def inference_mp(args):
 def main(args):
     model = load_model(args.model, args.api)
     args.t = model.T
-    dataset = load_dataset(args.task, args.ft)
+    dataset = load_dataset(args.task)
     print("Start running inference")
     # run inference
     res = []

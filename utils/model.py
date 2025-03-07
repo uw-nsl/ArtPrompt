@@ -9,7 +9,7 @@ import time
 
 
 gpt_apis = [
-    'your-api-keys'
+    "your-api-keys"
 ]
 gemini_apis = [
     "your-api-keys",

@@ -27,10 +27,6 @@ def eval_res(raw_res, label, AMR=False):
     raw_res = raw_res.lower()
 
     if "the answer is" in raw_res:
-        # pred = raw_res.split("the answer is")[1].strip()
-        # if pred[-1] == ".":
-        #     pred = pred[:-1]
-
         pred = raw_res.split("the answer is")[1].strip(" \n'\"`")
         pred = pred[:len(label)]
         if AMR:
