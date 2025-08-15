@@ -57,6 +57,10 @@ python baseline.py --model gpt-4-0613 --tmodel gpt-3.5-turbo-0613
 - You could use `--mp` arg to accelerate the inference time based on the available cpu cores on your machine.
 
 - `--ps` flag is used to set the font setup for our method. We have font name sets used for evaluation stated in our paper, please refer to Appendix A.3 for details. Specially, the top-1 setup in table 3 use `vitc-h-gen`, and ensemble use `vitc-h-gen/alphabet/keyboard/cards/letters/puzzle`,  please run each font to generate the individual result and use the `ensemble_eval.ipynb` notebook for ensemble evaluation results. The top-1 setup is subject to change given the different setups of victim models, we determined the top-1 font based on the average performance on our victim model sets.
+- you can use `-prompt_only` flag to just save attack prompt for other research. example usage as follows:
+```
+python baseline.py --ps vitc-h-gen  --mp 1 --n 1 --mode 4 -prompt_only
+```
 
 ## Acknowledgement
 Our project built upon the work from [python-art](https://github.com/sepandhaghighi/art),[llm-attack](https://github.com/llm-attacks/llm-attacks), [AutoDan](https://github.com/SheltonLiu-N/AutoDAN), [PAIR](https://github.com/patrickrchao/JailbreakingLLMs), [DeepInception](https://github.com/tmlr-group/DeepInception), [LLM-Finetuning-Safety](https://github.com/LLM-Tuning-Safety/LLMs-Finetuning-Safety), [BPE-Dropout](https://github.com/VProv/BPE-Dropout). We appreciated these open-sourced work in the community.
