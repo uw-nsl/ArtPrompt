@@ -91,7 +91,7 @@ def main(args):
                 api_idx = 0
                 res = []
                 for i in tqdm(range(len(data))):
-                    res_i = single_inference(i, api_idx, args.ps, args.defense, args.amodel, args.tmodel, data[i], debug=args.debug)
+                    res_i = single_inference(i, api_idx, args.ps, args.defense, args.amodel, args.tmodel, data[i], debug=args.debug, prompt_only=args.prompt_only)
                     res.append(res_i)
                 
             else:
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     args.add_argument("--ps", type=str, default="base", help="prompt setting")
     args.add_argument("--defense", default=None, type=str, help="defense setting", choices=["ppl", "para", "retok"])
     args.add_argument("--dataset", default=None, type=str, help="target dataset")
-
+    args.add_argument("-prompt_only", action="store_true", help="only used to save prompt")
     args.add_argument("-debug", action="store_true", help="debug mode")
 
     # args.add_argument("--")

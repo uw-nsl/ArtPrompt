@@ -24,7 +24,7 @@ def mask_word_stop(sentence, mask_token='[MASK]'):
     return masked_s_kw 
 
 
-def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, instruction, debug=False):
+def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, instruction, debug=False, prompt_only=False):
     defender = Defender(defense)
     if ps == 'mask-naive':
         pass
@@ -104,10 +104,16 @@ def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, inst
         model = model_utils.load_model(target_mname, api_idx)
 
         resp_list = []
+        attack_prompt_list = []
         for masked_instruction, kw in masked_s_kw:
             attack_prompt = prompt_gen(masked_instruction, kw)
-            response = defender.handler(model, attack_prompt, debug=debug)
-            resp_list.append(response)
+            attack_prompt_list.append(attack_prompt)
+            if prompt_only:
+                resp_list.append('test') # use this for just collectiong attack prompt
+                attack_prompt_list.append(attack_prompt)
+            else:
+                response = defender.handler(model, attack_prompt, debug=debug)
+                resp_list.append(response)
 
         res = {
             # reserved fields
@@ -116,8 +122,10 @@ def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, inst
             'resp_list': resp_list,
             
             # special fields
-            'msk_words': [x[1] for x in masked_s_kw]
+            'msk_words': [x[1] for x in masked_s_kw],
         }
+        if attack_prompt_list != []:
+            res['attack_prompt_list'] = attack_prompt_list
 
     elif ps == 'base': # direct query
         model = model_utils.load_model(target_mname, api_idx)
