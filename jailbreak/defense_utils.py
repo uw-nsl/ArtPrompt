@@ -96,13 +96,10 @@ class Defender:
 
             
         else:
-            # raise ValueError(f"Defense {name} is not supported")
             self.handler = self.no_defense
 
-    # def handler(self, instruction):
-
-    def no_defense(self, model, instruction):
-        response = model(instruction, n=1, debug=False)
+    def no_defense(self, model, instruction, debug=False):
+        response = model(instruction, n=1, debug=debug)
         return model.resp_parse(response)[0] 
     
     def ppl_def(self, model, instruction):

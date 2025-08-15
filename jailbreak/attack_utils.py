@@ -106,9 +106,7 @@ def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, inst
         resp_list = []
         for masked_instruction, kw in masked_s_kw:
             attack_prompt = prompt_gen(masked_instruction, kw)
-            # response = model(attack_prompt, n=1, debug=False)
-            # resp_list.append(model.resp_parse(response)[0])
-            response = defender.handler(model, attack_prompt)
+            response = defender.handler(model, attack_prompt, debug=debug)
             resp_list.append(response)
 
         res = {
@@ -123,7 +121,7 @@ def single_inference(idx, api_idx, ps, defense, attack_mname, target_mname, inst
 
     elif ps == 'base': # direct query
         model = model_utils.load_model(target_mname, api_idx)
-        response = model(instruction)
+        response = model(instruction, debug=debug)
 
         res = {
             # reserved fields
